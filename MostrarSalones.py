@@ -1,7 +1,7 @@
 import json
 import datetime
 
-class informacion:
+class mostrarInformacion:
     def __init__(self):
         self.archivo = "salonesDisponibles.json"
         self.dia = 0
@@ -37,7 +37,7 @@ class informacion:
             print(salon)                   
                 
 
-info = informacion()
+info = mostrarInformacion()
 info.obtenerDiaHora()
 info.mostrarSalonesDispoibles()
 

@@ -66,7 +66,6 @@ class filtrarInformacion:
         with open('salonesOcupados.json', 'r') as f:
             data = json.load(f)
 
-        '''Inicia prueba'''
         # Itera sobre los elementos y separa la cadena del campo "horario"
         for elemento in data['data']:
             # Separa la cadena en dos partes utilizando el separador "a"
@@ -83,7 +82,6 @@ class filtrarInformacion:
             # Elimina el campo "horario" original
             del elemento['horario']
 
-        '''Termina prueba'''
         # Ordena los elementos según el número de salón, el número de día y la hora de inicio de clase
         data_ordenado = sorted(data['data'], key=lambda x: (x['salon'], x['dia'], x['horaInicio']))
 
@@ -95,7 +93,7 @@ class filtrarInformacion:
         print("¡Ordenamiento exitoso!")
     
     # Función que itera el archivo ordenado para determinar los salones disponibles
-    def salonesDisponibles(self):
+    def obtenerSalonesDisponibles(self):
         # Definir las horas de inicio y fin de cada clase
         horas_clase = [7.0, 8.5, 10.0, 11.5, 13.0, 14.5, 16.0, 17.5, 19.0, 20.5]
 
